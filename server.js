@@ -12,6 +12,23 @@ app.get('/',(req,res) => {
     pageFooter: new Date().getFullYear()
   })
 });
+
+app.get('/about',(req,res) => {
+  res.render('about.hbs', {
+    pagetitle: "About Page",
+    pageBody: "Welcome to the about page",
+    pageFooter: new Date().getFullYear()
+  })
+});
+
+app.get('/project',(req,res) => {
+  res.render('project.hbs', {
+    pagetitle: "Portfolio Page",
+    pageBody: "Welcome to the portfolio page",
+    pageFooter: new Date().getFullYear()
+  })
+});
+
 app.get('/bad',(req,res) => {
   res.send({
     msg: 'Error sending the message'
