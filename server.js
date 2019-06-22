@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+const port = process.env.PORT || 3000;
 hbs.registerPartials(__dirname + '/views/partials');
 var app = express();
 app.set('view engine','hbs');
@@ -16,4 +17,6 @@ app.get('/bad',(req,res) => {
     msg: 'Error sending the message'
   });
 });
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`port is on ${port}`)
+});
